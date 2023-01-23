@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace ESM_API_CLIENT
+﻿namespace ESM_CLIENT
 {
     public class VersionsInformation
     {

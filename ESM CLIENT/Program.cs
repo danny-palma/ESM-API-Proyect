@@ -2,6 +2,7 @@
 using System.Net;
 using System.Net.Http;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace ESM_CLIENT
@@ -16,7 +17,8 @@ namespace ESM_CLIENT
                 HttpResponseMessage Response = await client.GetAsync("http://192.168.35.130");
                 Response.EnsureSuccessStatusCode();
                 string ResponseBody = await Response.Content.ReadAsStringAsync();
-                Console.WriteLine($"Message : {ResponseBody}");
+                VersionsInformation[] VersionsResponse = JsonSerializer.Deserialize<VersionsInformation[]>(ResponseBody);
+                Console.WriteLine($"Message : {VersionsResponse}");
                 Console.ReadKey();
             }
             catch (HttpRequestException ex)

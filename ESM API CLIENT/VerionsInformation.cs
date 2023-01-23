@@ -1,4 +1,4 @@
-﻿namespace ESM_API_SERVER
+﻿namespace ESM_API_CLIENT
 {
     public class VersionsInformation
     {
